@@ -13,15 +13,30 @@ import java.io.PrintWriter;
 
 public class LoginServlet extends HttpServlet {
 
+    private LoginService loginService = new LoginService();
+
+    //Daten an Webserver via GET übergeben
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //req ist das angefragte Objekt
-        req.setAttribute("name", req.getParameter("name"));
         req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req, resp);
 
 
     }
 
+    //Daten an Webserver via POST übergeben
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        String name = req.getParameter("name");
+        String pass = req.getParameter("password");
 
+        if (loginService.checkPassword(name, pass)){
+            req.setAttribute("name", req.getParameter("name"));
+            req.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(req,resp);
+        } else {
+            req.setAttribute("errorMessage", "login nicht erfolgreich");
+            req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req,resp);
+        }
+
+    }
 }
