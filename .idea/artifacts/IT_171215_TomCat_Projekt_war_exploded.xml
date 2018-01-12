@@ -2,12 +2,16 @@
   <artifact type="exploded-war" name="IT-171215-TomCat-Projekt:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/IT_171215_TomCat_Projekt_war_exploded</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="IT-171215-TomCat-Projekt/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="IT-171215-TomCat-Projekt" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="jstl-1.2" />
+        </element>
       </element>
+      <element id="javaee-facet-resources" facet="IT-171215-TomCat-Projekt/web/Web" />
+      <element id="javaee-facet-resources" facet="IT-171215-TomCat-Projekt/javaeeApplication/javaEEApplication" />
     </root>
   </artifact>
 </component>

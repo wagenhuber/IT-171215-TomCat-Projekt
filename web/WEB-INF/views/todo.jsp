@@ -15,7 +15,7 @@
 <p>Hallo ${name}! Herzlich Willkommen</p>
 <p>Deine Todos sind: ${todos}</p>
 <ol>
-    <c:forEach var="todo" items="todos">
+    <c:forEach var="todo" items="${todos}">
         <li>
             ${todo.name}
         </li>
