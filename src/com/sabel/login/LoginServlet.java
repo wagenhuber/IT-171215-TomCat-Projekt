@@ -20,6 +20,7 @@ public class LoginServlet extends HttpServlet {
     //Daten an Webserver via GET übergeben
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //Weiterleitung
         req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req, resp);
 
 
@@ -34,8 +35,8 @@ public class LoginServlet extends HttpServlet {
 
         if (loginService.checkPassword(name, pass)){
             req.setAttribute("name", req.getParameter("name"));
-            req.setAttribute("todos", toDoService.retrieveToDos());
-            req.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(req,resp);
+            req.getSession().setAttribute("name", name);
+            resp.sendRedirect("/todo.do");
         } else {
             req.setAttribute("errorMessage", "login nicht erfolgreich");
             req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req,resp);
