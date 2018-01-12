@@ -12,5 +12,6 @@
 </head>
 <body>
 <p>Hallo ${name}! Herzlich Willkommen</p>
+<p>Deine Todos sind: ${todos}</p>
 </body>
 </html>

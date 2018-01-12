@@ -1,4 +1,6 @@
-package com.sabel;
+package com.sabel.login;
+
+import com.sabel.todo.ToDoService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -6,14 +8,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
-//Anutation unter welcher Tomcat erreichbar ist
+//Anutation unter welcher Tomcat erreichbar ist - siehe web.xml
 @WebServlet(urlPatterns = "/login.do")
 
 public class LoginServlet extends HttpServlet {
 
     private LoginService loginService = new LoginService();
+    private ToDoService toDoService = new ToDoService();
 
     //Daten an Webserver via GET übergeben
     @Override
@@ -32,6 +34,7 @@ public class LoginServlet extends HttpServlet {
 
         if (loginService.checkPassword(name, pass)){
             req.setAttribute("name", req.getParameter("name"));
+            req.setAttribute("todos", toDoService.retrieveToDos());
             req.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(req,resp);
         } else {
             req.setAttribute("errorMessage", "login nicht erfolgreich");

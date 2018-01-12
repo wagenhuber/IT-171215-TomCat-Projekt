@@ -1,4 +1,4 @@
-package com.sabel;
+package com.sabel.login;
 
 public class LoginService {
 
