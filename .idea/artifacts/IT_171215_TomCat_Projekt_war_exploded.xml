@@ -7,7 +7,8 @@
           <element id="module-output" name="IT-171215-TomCat-Projekt" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="jstl-1.2" />
+          <element id="library" level="project" name="javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="org.xerial:sqlite-jdbc:3.21.0.1" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="IT-171215-TomCat-Projekt/web/Web" />
