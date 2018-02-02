@@ -35,9 +35,12 @@ public class LoginServlet extends HttpServlet {
 
         if (loginService.checkPassword(name, pass)){
             req.setAttribute("name", req.getParameter("name"));
+            
             req.getSession().setAttribute("name", name);
+            //neuer Http-Request durch den Server:
             resp.sendRedirect("/todo.do");
         } else {
+            //Wert auf Pinwand setzen:
             req.setAttribute("errorMessage", "login nicht erfolgreich");
             req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req,resp);
         }
