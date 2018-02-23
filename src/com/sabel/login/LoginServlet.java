@@ -2,6 +2,7 @@ package com.sabel.login;
 
 import com.sabel.todo.ToDoService;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,8 +15,9 @@ import java.io.IOException;
 
 public class LoginServlet extends HttpServlet {
 
-    private LoginService loginService = new LoginService();
-    private ToDoService toDoService = new ToDoService();
+    @Inject
+    private LoginService loginService;
+    //private ToDoService toDoService = new ToDoService();
 
     //Daten an Webserver via GET übergeben
     @Override

@@ -31,5 +31,7 @@
     <orderEntry type="library" name="org.xerial:sqlite-jdbc:3.21.0.1" level="project" />
     <orderEntry type="library" name="org.webjars:bootstrap:3.3.7-1" level="project" />
     <orderEntry type="library" name="org.webjars:jquery:3.3.1" level="project" />
+    <orderEntry type="library" name="org.jboss.weld.servlet:weld-servlet:2.4.6.Final" level="project" />
+    <orderEntry type="library" name="org.jboss.weld.servlet:weld-servlet:2.4.6.Final" level="project" />
   </component>
 </module>
