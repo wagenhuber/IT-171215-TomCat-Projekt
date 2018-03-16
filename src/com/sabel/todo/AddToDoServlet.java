@@ -26,6 +26,8 @@ public class AddToDoServlet extends HttpServlet{
         String todoname = req.getParameter("name");
         ToDo neuesToDo = new ToDo(todoname);
         toDoService.add(neuesToDo);
-        resp.sendRedirect("/todo.do");
+
+        //Bei Weiterleitung relative Pfadangabe verwenden
+        resp.sendRedirect("todo.do");
     }
 }

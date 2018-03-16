@@ -11,7 +11,7 @@
 
 
 <div class="container">
-<form method="post" action="/addTodo.do">
+<form method="post" action="addTodo.do">
     Todoname: <input type="text" name="name" >
     <input type="submit" value="Eintragen">
 </form>

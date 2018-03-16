@@ -17,9 +17,9 @@ public class DeleteToDoServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("delete-ToDo.do");
+        System.out.println ("delete-ToDo.do");
         String todoName = req.getParameter("name");
         toDoService.delete(new ToDo(todoName));
-        resp.sendRedirect("/todo.do");
+        resp.sendRedirect("todo.do");
     }
 }

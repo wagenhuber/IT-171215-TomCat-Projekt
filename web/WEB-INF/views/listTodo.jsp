@@ -27,7 +27,7 @@
                         ${todo.name}
                 </td>
                 <td>
-                    <a class="btn btn-danger" href="/delete-todo.do?name=${todo.name}">Löschen</a>
+                    <a class="btn btn-danger" href="delete-todo.do?name=${todo.name}">Löschen</a>
                 </td>
             </tr>
         </c:forEach>
@@ -38,7 +38,7 @@
     <br>
 
 
-    <form method="get" action="/addTodo.do">
+    <form method="get" action="addTodo.do">
         <input type="submit" value="Neues Todo hinzufügen" class="btn btn-success">
     </form>
 </div>

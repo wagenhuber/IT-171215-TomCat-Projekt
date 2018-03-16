@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
             
             req.getSession().setAttribute("name", name);
             //neuer Http-Request durch den Server:
-            resp.sendRedirect("/todo.do");
+            resp.sendRedirect("todo.do");
         } else {
             //Wert auf Pinwand setzen:
             req.setAttribute("errorMessage", "login nicht erfolgreich");
